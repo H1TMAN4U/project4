@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
-{
+{   
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +16,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        // DB::table('category')->insert([
+        //     ['id' => '', 'email' => 'keval@example.com'],
+        //     ['id' => '', 'email' => 'mehul@example.com'],
+        // ]);
     }
 
     /**

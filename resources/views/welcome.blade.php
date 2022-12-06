@@ -27,7 +27,7 @@
             @endif
 
             {{-- {{-- @extends('layouts/navigation1') --}}
-            @section('content') --}}
+            @section('content')
             <section class="intro" style="height: 95vh;">
                 <div class="" style="padding: 5% 5% 0 5%" >
                 <div id="indicators-carousel" class="relative" data-carousel="static" style="z-index: 0">
@@ -102,9 +102,9 @@
             </div>
             </section>
             
-            <footer class="p-4 shadow md:px-6 md:py-8 dark:bg-gray-900">
-              <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
-              </span>
+            <footer class="p-4 shadow md:px-6 md:py-8 dark:bg-white-100">
+                <span class="block text-sm text-gray-700 sm:text-center dark:text-gray-700">© 2022 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+                </span>
             </footer>
 
 </x-guest-layout>

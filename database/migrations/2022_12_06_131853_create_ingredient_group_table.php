@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('ingredient_group', function (Blueprint $table) {
             $table->id();
-            $table->string("group");
+            $table->string('main_group');
+            $table->string('sub_group');
             $table->timestamps();
         });
     }

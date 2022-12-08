@@ -1,6 +1,6 @@
 @extends('layouts/header')
 
-  
+
 <x-app-layout>
     {{-- <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -58,7 +58,7 @@
                     </div>
 
                     <div>
-                        <h1 for="Instructions"><b>Description:</b></h1>
+                        <h1 for="Instructions"><b>Instructions:</b></h1>
                         <p>{{$value['instructions']}}</p>
                     </div>
 
@@ -67,8 +67,8 @@
             </div>
         </div>
     </div>
-    @endforeach 
-    
+    @endforeach
+
     <footer class="p-4 shadow md:px-6 md:py-8 dark:bg-white-100">
         <span class="block text-sm text-gray-700 sm:text-center dark:text-gray-700">© 2022 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
         </span>

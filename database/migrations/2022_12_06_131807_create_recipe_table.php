@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('recipe', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->string("description");
-            $table->string("instructions");
+            $table->string("description", 1000);
+            $table->string("instructions", 1000);
             $table->string("img");
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('category');

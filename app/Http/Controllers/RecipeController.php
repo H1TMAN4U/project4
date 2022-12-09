@@ -89,4 +89,12 @@ class RecipeController extends Controller
     {
         //
     }
+    public function search()
+    {
+        $search_text=$_GET["query"];
+        // $id=
+        // $search_text = $request->query;
+        $ingredients = Recipe::where('name','LIKE', '%'.$search_text.'%')->get();
+        return view('products.search',["ingredients"=>$ingredients]);
+    }
 }

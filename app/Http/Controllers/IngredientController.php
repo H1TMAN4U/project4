@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ingredient;
 use Illuminate\Http\Request;
-
+use App\Models\Recipe;
 class IngredientController extends Controller
 {
     /**
@@ -82,7 +82,7 @@ class IngredientController extends Controller
     {
         //
     }
-    public function search(Request $request)
+    public function search()
     {
         $search_text=$_GET["query"];
         // $id=

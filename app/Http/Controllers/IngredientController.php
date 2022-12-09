@@ -35,31 +35,7 @@ class IngredientController extends Controller
      */
     public function store(Request $request)
     {
-        $contents= array();
-        $rules = [
-            'start' => 'required|integer',
-            'lenght' => 'required|integer',
-        ];
-        $validator = Validator::make($request->all(),$rules);
-        if ($validator()->fails()){
-            $contents = array("msg"=>$validator->errors());
-            $status=400;
-        }
-        else{
-            $draw = $request->input('draw');
-            $skip = $request->input('start');
-            $limit = $request->input('lenght');
-            $search = $request->input('search');
-            $searchKey = $request->input('value');
-            $order = $request->input('order');
-            $columns = $request->input('columns');
-            $orderColumn = $columns[$order[0]['column']]['data'];
-            $orderType = $order[0]['dir'];
-            try{
-                // $rowData = Ingredient::select('id','name', '')
-                // https://www.youtube.com/watch?v=E9DclSBQPjQ&list=PLkv5waWxmxmpmQMzNRyWU7GzQgKc3nIdj&index=4&ab_channel=StudentTutorial
-            }
-        }
+        //
     }
 
     /**
@@ -105,5 +81,13 @@ class IngredientController extends Controller
     public function destroy(Ingredient $ingredient)
     {
         //
+    }
+    public function search(Request $request)
+    {
+        $search_text=$_GET["query"];
+        // $id=
+        // $search_text = $request->query;
+        $ingredients = Ingredient::where('name','LIKE', '%'.$search_text.'%')->get();
+        return view('products.search',["ingredients"=>$ingredients]);
     }
 }

@@ -48,10 +48,10 @@ class RecipeController extends Controller
     public function show(Recipe $recipe)
     {
         $recipe= Recipe::all();
-        $ing=Ingredient::all();
-        return view('list', 
+        $ingredient=Ingredient::all();
+        return view('list',
         [
-            'recipe'=>$recipe,"ingredient"=>$ing
+            'recipe'=>$recipe,"ingredient"=>$ingredient
         ]
          );
     }

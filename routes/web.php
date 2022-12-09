@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RecipeController;
 use App\Models\Ingredient;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\IngredientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +29,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/search',[IngredientController::class,"search"]);
 });
-Route::get('/dshboard', 'Ingredient@index')->name('ingredient');
-Route::post('/dshboard', 'Ingredient@show')->name('ingredient table data');
 require __DIR__.'/auth.php';

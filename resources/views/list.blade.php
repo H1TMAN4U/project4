@@ -43,6 +43,7 @@
         background-image: linear-gradient(rgb(4 9 30 / 21%), rgb(4 9 30 / 60%)), url(https://mykaleidoscope.ru/en/uploads/posts/2022-09/1663731150_1-mykaleidoscope-ru-p-food-on-a-black-background-yeda-oboi-1.jpg);
     }
     </style>
+
     @foreach ($recipe as $value)
     <div class="flex justify-center">
         <div class="rounded-lg shadow-lg bg-white max-w-sm">
@@ -55,9 +56,7 @@
                     <div>
                         <h1 for="Description"><b>Description:</b></h1>
                         <p>{{$value['description']}}</p>
-                    </div>
 
-                    <div>
                         <h1 for="Instructions"><b>Instructions:</b></h1>
                         <p>{{$value['instructions']}}</p>
                     </div>

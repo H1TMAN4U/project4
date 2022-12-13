@@ -1,8 +1,4 @@
 <x-app-layout>
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-
   <style>
     .intro{
         background-repeat: no-repeat;
@@ -13,7 +9,7 @@
     </style>
 
     @foreach ($recipe as $value)
-            <a href="#" class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl">
+            <a href="full-data/{{$value->id}}" class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl">
                 <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={{$value['img']}} alt="">
                 <div class="flex flex-col justify-between p-4 leading-normal">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{$value['name']}} </h5>

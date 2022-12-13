@@ -16,7 +16,7 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link a href="list">
+                    <x-nav-link a href="/list">
                         {{ __('Recipes') }}
                     </x-nav-link>
                 </div>
@@ -43,8 +43,8 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('MyRecipes') }}
+                        <x-dropdown-link :href="route('recipes.edit-recipes')">
+                            {{ __('My Recipes') }}
                         </x-dropdown-link>
 
 
@@ -62,7 +62,6 @@
                 </x-dropdown>
             </div>
                 @endauth
-
                 <!-- Guest -->
                 @guest
                 <div class="hidden sm:flex sm:items-center sm:ml-6">

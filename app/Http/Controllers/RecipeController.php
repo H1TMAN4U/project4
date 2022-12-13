@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Recipe;
 use App\Models\Ingredient;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RecipeController extends Controller
 {
@@ -49,13 +50,21 @@ class RecipeController extends Controller
     {
         $recipe= Recipe::all();
         $ingredient=Ingredient::all();
-        return view('list',
+        return view('products.list',
         [
             'recipe'=>$recipe,"ingredient"=>$ingredient
         ]
          );
     }
-
+    public function IDrecipe($id){
+    //  $recipe=Recipe::find($id);
+    //  return dd($recipe);
+        // return view("full-data",["recipes"=>$recipe]);
+        $results = DB::table("recipe")->where('id',$id)->get();
+        return view("full-data",["recipes"=>$results]);
+        // return $results;
+        // return dd($results);
+    }
     /**
      * Show the form for editing the specified resource.
      *

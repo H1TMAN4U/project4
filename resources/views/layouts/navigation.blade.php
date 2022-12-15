@@ -43,11 +43,14 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('recipes.edit-recipes')">
-                            {{ __('My Recipes') }}
+
+                        <x-dropdown-link href="/addrecipe">
+                            {{ __('Add new Recipe') }}
                         </x-dropdown-link>
 
-
+                        <x-dropdown-link href="/list">
+                            {{ __('My Recipes') }}
+                        </x-dropdown-link>
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

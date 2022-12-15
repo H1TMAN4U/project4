@@ -19,8 +19,13 @@ return new class extends Migration
             $table->string("description", 1000);
             $table->string("instructions", 2000);
             $table->string("img");
+            
             $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('users_id');
+
             $table->foreign('category_id')->references('id')->on('category');
+            $table->foreign('users_id')->references('id')->on('users');
+
             $table->timestamps();
         });
     }

@@ -27,8 +27,12 @@ return new class extends Migration
                 'description' => 'Upgrade cheesy tomato pasta with gnocchi, chorizo and mozzarella for a comforting bake that makes an excellent midweek meal',
                 'instructions' => 'STEP 1 Heat the oil in a medium pan over a medium heat. Fry the onion and garlic for 8-10 mins until soft. Add the chorizo and fry for 5 mins more. Tip in the tomatoes and sugar, and season. Bring to a simmer, then add the gnocchi and cook for 8 mins, stirring often, until soft. Heat the grill to high. STEP 2 Stir ¾ of the mozzarella and most of the basil through the gnocchi. Divide the mixture between six ovenproof ramekins, or put in one baking dish. Top with the remaining mozzarella, then grill for 3 mins, or until the cheese is melted and golden. Season, scatter over the remaining basil and serve with green salad.',
                 'img' => 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/gnocchi-1d16725.jpg',
-                'category_id' => '1','created_at'=>$date,'updated_at'=>$date
+                'category_id' => '1',
+                'created_at'=>$date,
+                'updated_at'=>$date,
+                'users_id'=>'1'
                 ],
+
                 [
                 'name' => 'American pancakes',
                 'description' => 'Easy, American-style, fluffy pancakes are great for feeding a crowd at breakfast or brunch. Top with something sweet like fruit, jam or syrup, or rashers of crispy bacon.',
@@ -49,8 +53,9 @@ return new class extends Migration
                 'img' => 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/american-style-pancakes-87119e3.jpg?quality=90&webp=true&resize=300,272',
                 'category_id' => '1',
                 'created_at'=>$date,
-                'updated_at'=>$date
-                ],
+                'updated_at'=>$date,
+                'users_id'=>'1'
+                ]
             )
         );
         DB::table('measure')->insert(
@@ -99,7 +104,7 @@ return new class extends Migration
         );
         DB::table('recipe_ingredient')->insert(
             array(
-                ['amount' => 1,'recipe_id' => 1,'ingredient_id' => 1,'measure_id' => 1,'created_at'=>$date,'updated_at'=>$date]
+                ['amount' => 1,'recipe_id' => 3,'ingredient_id' => 1,'measure_id' => 1,'created_at'=>$date,'updated_at'=>$date]
             )
         );
     }

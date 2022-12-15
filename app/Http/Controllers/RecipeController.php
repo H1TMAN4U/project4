@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Recipe;
 use App\Models\Ingredient;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class RecipeController extends Controller
@@ -98,6 +101,13 @@ class RecipeController extends Controller
     {
         //
     }
+
+
+    public function RecipeForm(){
+        $categories=Category::all();
+        return view("AddMyRecipe",["categories"=>$categories]);
+    }
+
     public function search()
     {
         $search_text=$_GET["query"];
@@ -105,5 +115,20 @@ class RecipeController extends Controller
         // $search_text = $request->query;
         $ingredients = Recipe::where('name','LIKE', '%'.$search_text.'%')->get();
         return view('products.search',["ingredients"=>$ingredients]);
+    }
+    function AddMyRecipe(Request $req){
+        $created_at=Carbon::now()->toDateTimeString();
+        $users_id= Auth::user()->id;
+        $recipe = new Recipe; // ANDRI KO TU DARI TU
+        $recipe -> name=$req->name;
+        $recipe -> description=$req->description;
+        $recipe -> instructions=$req->instructions;
+        $recipe -> img=$req->img;
+        $recipe -> category_id=$req->category_id;
+        $recipe -> created_at=$created_at;
+        $recipe -> updated_at=$created_at;
+        $recipe -> users_id = $users_id;
+        $recipe -> save();
+        return redirect('/list');
     }
 }

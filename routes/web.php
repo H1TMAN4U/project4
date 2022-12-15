@@ -26,7 +26,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('list',[RecipeController::class,'show']);
+Route::get('/list',[RecipeController::class,'show']);
 Route::get('/search',[RecipeController::class,"search"]);
 
 Route::middleware('auth')->group(function () {
@@ -34,11 +34,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    Route::get('/recipes', [RecipeFormController::class, 'edit-recipes'])->name('recipes.edit-recipes');
-    Route::patch('/recipes', [RecipeFormController::class, 'update'])->name('recipes.update');
-    Route::delete('/recipes', [RecipeFormController::class, 'destroy'])->name('recipes.destroy');
-
+    Route::get('/addrecipe',[RecipeController::class,'RecipeForm'])->name('recipe.recipeform'); // wat is this, idk wat it is, but its garbage.
+    
+    
+    
+    Route::POST('add',[RecipeController::class, 'AddMyRecipe']);
     // Route::get("/search/ingredient",[IngredientController::class,'search']);
 });
 require __DIR__.'/auth.php';

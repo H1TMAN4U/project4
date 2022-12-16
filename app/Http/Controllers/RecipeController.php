@@ -64,7 +64,7 @@ class RecipeController extends Controller
     //  return dd($recipe);
         // return view("full-data",["recipes"=>$recipe]);
         $results = DB::table("recipe")->where('id',$id)->get();
-        return view("full-data",["recipes"=>$results]);
+        return view("FullRecipeData",["recipes"=>$results]);
         // return $results;
         // return dd($results);
     }
@@ -116,10 +116,10 @@ class RecipeController extends Controller
         $ingredients = Recipe::where('name','LIKE', '%'.$search_text.'%')->get();
         return view('products.search',["ingredients"=>$ingredients]);
     }
-    function AddMyRecipe(Request $req){
+    public function AddMyRecipe(Request $req){
         $created_at=Carbon::now()->toDateTimeString();
         $users_id= Auth::user()->id;
-        $recipe = new Recipe; // ANDRI KO TU DARI TU
+        $recipe = new Recipe;
         $recipe -> name=$req->name;
         $recipe -> description=$req->description;
         $recipe -> instructions=$req->instructions;
@@ -130,5 +130,11 @@ class RecipeController extends Controller
         $recipe -> users_id = $users_id;
         $recipe -> save();
         return redirect('/list');
+    }
+    public function UserRecipes(){
+        $id=Auth::user()->id;
+        $recipes=Recipe::where("users_id",$id)->get();
+        // return dd($recipes);
+        return view("myrecipe.MyRecipes",["recipe"=>$recipes]);
     }
 }

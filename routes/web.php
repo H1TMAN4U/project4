@@ -19,7 +19,9 @@ use App\Http\Controllers\IngredientController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/full-data/{id}',[RecipeController::class,"IDrecipe"]);
+
+
+Route::get('/fullrecipedata/{id}',[RecipeController::class,"IDrecipe"]);
     
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -35,8 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/addrecipe',[RecipeController::class,'RecipeForm'])->name('recipe.recipeform'); // wat is this, idk wat it is, but its garbage.
-    
-    
+    Route::get('/myrecipes', [RecipeController::class, 'UserRecipes']);
     
     Route::POST('add',[RecipeController::class, 'AddMyRecipe']);
     // Route::get("/search/ingredient",[IngredientController::class,'search']);

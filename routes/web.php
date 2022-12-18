@@ -21,7 +21,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/fullrecipedata/{id}',[RecipeController::class,"IDrecipe"]);
+Route::get('/FullRecipeData/{id}',[RecipeController::class,"IDrecipe"]);
     
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,9 +36,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/addrecipe',[RecipeController::class,'RecipeForm'])->name('recipe.recipeform'); // wat is this, idk wat it is, but its garbage.
-    Route::get('/myrecipes', [RecipeController::class, 'UserRecipes']);
+    Route::get('/addrecipe',[RecipeController::class,'RecipeForm'])->name('recipe.recipeform');
     
+    Route::get('/myrecipes', [RecipeController::class, 'UserRecipes']);
+    Route::get('delete/{id}', [RecipeController::class, 'delete']);
+    Route::get('Update/{id}', [RecipeController::class, 'ShowData']);
+    Route::POST('update', [RecipeController::class, 'update']);
+
     Route::POST('add',[RecipeController::class, 'AddMyRecipe']);
     // Route::get("/search/ingredient",[IngredientController::class,'search']);
 });

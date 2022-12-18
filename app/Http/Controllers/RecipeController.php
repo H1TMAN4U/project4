@@ -86,10 +86,10 @@ class RecipeController extends Controller
      * @param  \App\Models\Recipe  $recipe
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Recipe $recipe)
-    {
-        //
-    }
+    // public function update(Request $request, Recipe $recipe)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -129,12 +129,40 @@ class RecipeController extends Controller
         $recipe -> updated_at=$created_at;
         $recipe -> users_id = $users_id;
         $recipe -> save();
-        return redirect('/list');
+        return redirect('/myrecipes');
     }
     public function UserRecipes(){
         $id=Auth::user()->id;
         $recipes=Recipe::where("users_id",$id)->get();
         // return dd($recipes);
         return view("myrecipe.MyRecipes",["recipe"=>$recipes]);
+    }
+    public function delete($id){
+        $recipes=Recipe::find($id);
+        $recipes->delete();
+        return redirect('/myrecipes');    
+    }
+    public function ShowData($id){
+        $categories=Category::all();
+        return view("Update",["categories"=>$categories]); 
+        $recipes=Recipe::find($id);
+        return view("Update",["recipe"=>$recipes]);
+    }
+    public function update(Request $req){
+        $created_at = Carbon::now()->toDateTimeString();
+        $users_id = Auth::user()->id;
+        $recipe = Recipe::find($req->id);
+        $recipe -> name=$req->name;
+        $recipe -> description=$req->description;
+        $recipe -> instructions=$req->instructions;
+        $recipe -> img=$req->img;
+        $recipe -> category_id=$req->category_id;
+        $recipe -> created_at=$created_at;
+        $recipe -> updated_at=$created_at;
+        $recipe -> users_id = $users_id;
+        $recipe -> save();
+        return redirect('/myrecipes');
+
+
     }
 }

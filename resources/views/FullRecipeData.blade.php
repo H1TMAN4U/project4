@@ -6,9 +6,9 @@
           background-position: absolute;
           background-image: linear-gradient(rgb(4 9 30 / 21%), rgb(4 9 30 / 60%)), url(https://mykaleidoscope.ru/en/uploads/posts/2022-09/1663731150_1-mykaleidoscope-ru-p-food-on-a-black-background-yeda-oboi-1.jpg);
       }
-      </style>
-  
-      @foreach ($recipes as $value)
+    </style>
+    <div class="container mx-auto px-4">
+    @foreach ($recipes as $value)
               <div class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl">
                   <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="{{$value->img}}" alt="">
                   <div class="flex flex-col justify-between p-4 leading-normal">
@@ -17,7 +17,8 @@
                   </div>
                 </div>
   
-      @endforeach
+     @endforeach
   </x-app-layout>
+  </div>
   @extends('layouts/footer')
   

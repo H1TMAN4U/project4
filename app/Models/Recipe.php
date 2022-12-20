@@ -12,4 +12,11 @@ class Recipe extends Model
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamp = false;
+    protected $fillable =
+        [
+        'name',
+        'description',
+        'instructions',
+        'img'
+        ];
 }

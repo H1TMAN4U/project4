@@ -32,18 +32,19 @@ Route::get('/list',[RecipeController::class,'show']);
 Route::get('/search',[RecipeController::class,"search"]);
 
 Route::middleware('auth')->group(function () {
-;
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/addrecipe',[RecipeController::class,'RecipeForm'])->name('recipe.recipeform');
     
     Route::get('/myrecipes', [RecipeController::class, 'UserRecipes']);
-    Route::get('delete/{id}', [RecipeController::class, 'delete']);
-    Route::get('Update/{id}', [RecipeController::class, 'ShowData']);
-    Route::POST('update', [RecipeController::class, 'update']);
+    // Route::get('delete/{id}', [RecipeController::class, 'delete']);
+    // Route::get('Update/{id}', [RecipeController::class, 'ShowData']);
+    // Route::POST('update', [RecipeController::class, 'update']);
 
-    Route::POST('add',[RecipeController::class, 'AddMyRecipe']);
+    // Route::POST('add',[RecipeController::class, 'AddMyRecipe']);
     // Route::get("/search/ingredient",[IngredientController::class,'search']);
+    Route::resource('/recipes', RecipeController::class);
+
 });
 require __DIR__.'/auth.php';

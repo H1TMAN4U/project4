@@ -27,7 +27,7 @@
 				<div class="col-sm-10">
 					<input type="text" name="name" class="form-control" />
 				</div>
-			</div>
+			</div>gytgygygygyg
 			<div class="row mb-3">
 				<label class="col-sm-2 col-label-form">description</label>
 				<div class="col-sm-10">
@@ -57,7 +57,7 @@
 			</div>
 			<div class="text-center">
 				<input type="submit" class="btn btn-primary" value="Add" />
-			</div>	
+			</div>
 		</form>
 	</div>
 </div>

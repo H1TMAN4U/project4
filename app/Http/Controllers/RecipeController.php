@@ -151,7 +151,7 @@ class RecipeController extends Controller
 
     public function RecipeForm(){
         $categories=Category::all();
-        return view("AddMyRecipe",["categories"=>$categories]);
+        return view("myrecipe.create",["categories"=>$categories]);
     }
 
     public function search()

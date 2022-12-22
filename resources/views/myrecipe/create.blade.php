@@ -31,15 +31,27 @@
             </div>
         </div>
         <div class="row mb-3">
-            <label for="description" class="block mb-2 text-sm font-medium text-gray-900 ">Description</label>
-            <div>
-                <input type="text" name="description" id="description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="name" required>
+            <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+                <div class="flex items-center justify-between px-3 py-2 border-b dark:border-gray-600">
+                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 ">Description</label>
+                    <div id="tooltip-fullscreen" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    </div>
+                </div>
+                <div class="px-4 py-2 bg-white rounded-b-lg dark:bg-gray-800">
+                    <textarea name="description" id="description" rows="8" class="block w-full px-0 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write an article..." required></textarea>
+                </div>
             </div>
         </div>
         <div class="row mb-3">
-            <label for="instructions" class="block mb-2 text-sm font-medium text-gray-900 ">Instructions</label>
-            <div>
-                <input type="text" name="instructions" id="instructions" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="name" required>
+            <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+                <div class="flex items-center justify-between px-3 py-2 border-b dark:border-gray-600">
+                    <label for="instructions" class="block mb-2 text-sm font-medium text-gray-900 ">Instructions</label>
+                    <div id="tooltip-fullscreen" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    </div>
+                </div>
+                <div class="px-4 py-2 bg-white rounded-b-lg dark:bg-gray-800">
+                    <textarea name="instructions" id="instructions" rows="8" class="block w-full px-0 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write an article..." required></textarea>
+                </div>
             </div>
         </div>
         {{-- <div class="row mb-4">
@@ -64,8 +76,7 @@
     </form>
     </div>
 
-
-    <form method="post" action="{{ route('recipes.store') }}" enctype="multipart/form-data">
+    {{-- <form method="post" action="{{ route('recipes.store') }}" enctype="multipart/form-data">
         @csrf
 <a href="#" class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
     <div>
@@ -104,7 +115,7 @@
     <input value="Add" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 " id="multiple_files" type="submit" multiple>
 
 </a>
-</form>
+</form> --}}
 </div>
 
     @endsection('content')

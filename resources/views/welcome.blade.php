@@ -1,26 +1,14 @@
 <x-guest-layout>
     <style>
-        .intro{
+        .intro
+        {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: absolute;
-            background-image: linear-gradient(rgb(4 9 30 / 21%), rgb(4 9 30 / 60%)), url(https://mykaleidoscope.ru/en/uploads/posts/2022-09/1663731150_1-mykaleidoscope-ru-p-food-on-a-black-background-yeda-oboi-1.jpg);
+            background-image: linear-gradient(rgb(0 0 0 / 22%), rgb(4 9 30 / 88%)), url("/images/background-image.jpg");   
         }
         </style>
 
-        {{-- @if (Route::has('login'))
-        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            @auth
-                <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-            @else
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                @endif
-            @endauth
-        </div>
-        @endif --}}
         <section class="intro" style="height: 95vh;">
             <div class="" style="padding: 5% 5% 0 5%" >
             <div id="indicators-carousel" class="relative" data-carousel="static" style="z-index: 0">

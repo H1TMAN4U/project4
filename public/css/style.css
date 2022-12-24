@@ -1,0 +1,6 @@
+
+.intro{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgb(0 0 0 / 22%), rgb(4 9 30 / 88%)), url("/public/images/background-image.jpg");   
+}

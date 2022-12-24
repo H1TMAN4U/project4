@@ -1,17 +1,26 @@
 <x-app-layout>
 
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
 </head>
+<style>
+.intro
+    {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgb(0 0 0 / 22%), rgb(4 9 30 / 88%)), url("/images/background-image.jpg");   
+    height: 95vh;
+    }
+</style>
 <body>
-    <div class="container mt-5">
+    <section class="intro">
+        <div class="container mx-auto p-4 ">    
+            @yield('content')
+    
+        </div>
+    </section>
 
-        <h1 class="text-primary mt-3 mb-4 text-center"><b></b></h1>
-
-        @yield('content')
-
-    </div>
 
 </body>
 </html>
 </x-app-layout>
+@extends('layouts/footer')
 

@@ -48,7 +48,7 @@
                             {{ __('Add new Recipe') }}
                         </x-dropdown-link>
 
-                        <x-dropdown-link href="/myrecipes">
+                        <x-dropdown-link href="/recipes">
                             {{ __('My Recipes') }}
                         </x-dropdown-link>
                         <!-- Authentication -->
